@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { get, initDb } from '../_db';
+import { get, initDb } from '../_db.js';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   const slug = Array.isArray(req.query.slug) ? req.query.slug[0] : req.query.slug;

@@ -1,8 +1,6 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-import fs from 'fs';
-import path from 'path';
 import mysql from 'mysql2/promise';
 
 const poolConfig = {
@@ -13,7 +11,7 @@ const poolConfig = {
   database: process.env.TIDB_DATABASE || process.env.MYSQLDATABASE || process.env.DB_NAME || 'mohsin_portfolio',
   ssl: {
     minVersion: 'TLSv1.2',
-    ca: fs.readFileSync(path.join(process.cwd(), 'certs/ca.pem')),
+    ca: process.env.TIDB_CA_CERT,
   },
 };
 
