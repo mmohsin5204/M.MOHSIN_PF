@@ -1,0 +1,6 @@
+{
+  "name": "Creative Developer Portfolio",
+  "description": "An immersive, Awwwards-grade experimental developer portfolio website built with React, Framer Motion, Tailwind CSS, Express, and SQLite. Features kinetic typography, interactive 3D particle canvas, case studies, scroll-linked vertical timeline, and custom interactive cursor.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
