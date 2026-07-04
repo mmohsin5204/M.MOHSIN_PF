@@ -1,57 +1,64 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
+import fs from 'fs';
+import path from 'path';
 import mysql from 'mysql2/promise';
-import { Project, ContactSubmission } from './types.ts';
 
 const poolConfig = {
-  host: process.env.MYSQLHOST || process.env.DB_HOST || 'localhost',
-  user: process.env.MYSQLUSER || process.env.DB_USER || 'root',
-  password: process.env.MYSQLPASSWORD || process.env.DB_PASSWORD || '',
-  database: process.env.MYSQLDATABASE || process.env.DB_NAME || 'mohsin_portfolio',
-  port: Number(process.env.MYSQLPORT || process.env.DB_PORT || 3306) || 3306,
+  host: process.env.TIDB_HOST || process.env.MYSQLHOST || process.env.DB_HOST || 'localhost',
+  port: Number(process.env.TIDB_PORT || process.env.MYSQLPORT || process.env.DB_PORT || 3306) || 3306,
+  user: process.env.TIDB_USER || process.env.MYSQLUSER || process.env.DB_USER || 'root',
+  password: process.env.TIDB_PASSWORD || process.env.MYSQLPASSWORD || process.env.DB_PASSWORD || '',
+  database: process.env.TIDB_DATABASE || process.env.MYSQLDATABASE || process.env.DB_NAME || 'mohsin_portfolio',
+  ssl: {
+    minVersion: 'TLSv1.2',
+    ca: fs.readFileSync(path.join(process.cwd(), 'certs/ca.pem')),
+  },
 };
 
-const pool = mysql.createPool(poolConfig);
+export const pool = mysql.createPool(poolConfig);
 
 console.log('MySQL pool initialized for database:', poolConfig.database);
 
-// Helper for single row query
 export function get<T>(sql: string, params: any[] = []): Promise<T | null> {
-  return pool.query(sql, params).then(([rows]) => {
-    const result = Array.isArray(rows) ? (rows[0] as T | null) : null;
-    return result || null;
-  }).catch((err) => {
-    console.error(`Database Error on get: ${sql}`, err);
-    throw err;
-  });
+  return pool.query(sql, params)
+    .then(([rows]) => {
+      const result = Array.isArray(rows) ? (rows[0] as T | null) : null;
+      return result || null;
+    })
+    .catch((err) => {
+      console.error(`Database Error on get: ${sql}`, err);
+      throw err;
+    });
 }
 
-// Helper for multi-row query
 export function all<T>(sql: string, params: any[] = []): Promise<T[]> {
-  return pool.query(sql, params).then(([rows]) => {
-    return (Array.isArray(rows) ? rows : []) as T[];
-  }).catch((err) => {
-    console.error(`Database Error on all: ${sql}`, err);
-    throw err;
-  });
+  return pool.query(sql, params)
+    .then(([rows]) => {
+      return (Array.isArray(rows) ? rows : []) as T[];
+    })
+    .catch((err) => {
+      console.error(`Database Error on all: ${sql}`, err);
+      throw err;
+    });
 }
 
-// Helper for write queries (INSERT, UPDATE, DELETE)
 export function run(sql: string, params: any[] = []): Promise<{ lastID: number; changes: number }> {
-  return pool.query(sql, params).then(([result]) => {
-    const metadata = result as any;
-    return {
-      lastID: metadata.insertId ?? 0,
-      changes: metadata.affectedRows ?? 0,
-    };
-  }).catch((err) => {
-    console.error(`Database Error on run: ${sql}`, err);
-    throw err;
-  });
+  return pool.query(sql, params)
+    .then(([result]) => {
+      const metadata = result as any;
+      return {
+        lastID: metadata.insertId ?? 0,
+        changes: metadata.affectedRows ?? 0,
+      };
+    })
+    .catch((err) => {
+      console.error(`Database Error on run: ${sql}`, err);
+      throw err;
+    });
 }
 
-// Initialize tables and seed data
 export async function initDb(): Promise<void> {
   try {
     await pool.query(`
