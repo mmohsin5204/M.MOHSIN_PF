@@ -21,9 +21,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const parsedProject = {
       ...project,
-      case_study_content: JSON.parse(project.case_study_content),
-      tech_stack: JSON.parse(project.tech_stack),
-      image_urls: JSON.parse(project.image_urls),
+      case_study_content: typeof project.case_study_content === 'string'
+        ? JSON.parse(project.case_study_content)
+        : project.case_study_content,
+      tech_stack: typeof project.tech_stack === 'string'
+        ? JSON.parse(project.tech_stack)
+        : project.tech_stack,
+      image_urls: typeof project.image_urls === 'string'
+        ? JSON.parse(project.image_urls)
+        : project.image_urls,
     };
 
     res.status(200).json(parsedProject);
