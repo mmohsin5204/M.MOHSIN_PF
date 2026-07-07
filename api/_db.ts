@@ -62,15 +62,15 @@ export async function initDb(): Promise<void> {
     await pool.query(`
       CREATE TABLE IF NOT EXISTS projects (
         id INT AUTO_INCREMENT PRIMARY KEY,
-        title TEXT NOT NULL,
-        slug TEXT UNIQUE NOT NULL,
+        title VARCHAR(150) NOT NULL,
+        slug VARCHAR(150) NOT NULL UNIQUE,
         short_description TEXT NOT NULL,
-        case_study_content TEXT NOT NULL,
-        tech_stack TEXT NOT NULL,
-        image_urls TEXT NOT NULL,
-        project_url TEXT,
-        github_url TEXT,
-        is_featured INT DEFAULT 1,
+        case_study_content JSON NOT NULL,
+        tech_stack JSON NOT NULL,
+        image_urls JSON NOT NULL,
+        project_url VARCHAR(255),
+        github_url VARCHAR(255),
+        is_featured TINYINT(1) DEFAULT 1,
         display_order INT DEFAULT 0,
         created_at DATETIME DEFAULT CURRENT_TIMESTAMP
       )
