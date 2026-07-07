@@ -79,10 +79,10 @@ export async function initDb(): Promise<void> {
     await pool.query(`
       CREATE TABLE IF NOT EXISTS contact_submissions (
         id INT AUTO_INCREMENT PRIMARY KEY,
-        name TEXT NOT NULL,
-        email TEXT NOT NULL,
+        name VARCHAR(100) NOT NULL,
+        email VARCHAR(150) NOT NULL,
         message TEXT NOT NULL,
-        status TEXT DEFAULT 'pending',
+        status VARCHAR(20) DEFAULT 'pending',
         created_at DATETIME DEFAULT CURRENT_TIMESTAMP
       )
     `);
