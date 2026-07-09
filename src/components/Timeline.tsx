@@ -55,7 +55,7 @@ export default function Timeline() {
   });
 
   return (
-    <div ref={containerRef} className="relative w-full max-w-5xl mx-auto py-16 px-3 sm:px-4">
+    <div ref={containerRef} className="relative w-full max-w-5xl mx-auto py-16 px-4 sm:px-6">
       {/* Scroll-Linked Progress Line (Vertical Line on left for mobile/tablet) */}
       <div className="absolute left-6 lg:left-1/2 top-4 bottom-4 w-[2px] bg-stone-200">
         {/* Filled scroll indicator */}

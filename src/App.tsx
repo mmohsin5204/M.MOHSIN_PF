@@ -478,10 +478,10 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
           id="about"
           className="relative pt-6 md:pt-10 lg:pt-16 pb-24 px-4 sm:px-6 md:px-12 w-full max-w-5xl mx-auto border-t border-stone-200/20 z-10"
         >
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-12 md:gap-16 items-start">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-16 items-start">
             
             {/* Split Left: 3D Tilting Image */}
-            <div className="col-span-1 md:col-span-5 flex justify-center">
+            <div className="col-span-1 lg:col-span-5 flex justify-center">
               <motion.div
                 onMouseMove={handleMouseMoveTilt}
                 onMouseLeave={handleMouseLeaveTilt}
@@ -494,7 +494,7 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
                   rotateY: tilt.y
                 }}
                 transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-                className="relative w-full max-w-[280px] sm:max-w-[320px] h-[220px] sm:h-[260px] md:max-w-none md:h-[360px] rounded-3xl overflow-hidden border border-stone-200/60 shadow-2xl group cursor-help"
+                className="relative w-full max-w-full lg:max-w-[280px] h-[200px] sm:h-[240px] md:h-[300px] lg:h-[360px] rounded-3xl overflow-hidden border border-stone-200/60 shadow-2xl group cursor-help"
                 data-cursor="pointer"
               >
                 {/* Profile Placeholder Image with elegant canvas gradient overlay */}
@@ -522,7 +522,7 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
             </div>
 
             {/* Split Right: Text Reveal and Skills display */}
-            <div className="col-span-1 md:col-span-7 space-y-5 sm:space-y-6 text-left">
+            <div className="col-span-1 lg:col-span-7 space-y-5 sm:space-y-6 text-left">
               <div className="space-y-4">
                 <h2 className="text-xs font-mono text-blue-500 uppercase tracking-widest font-bold">
                   About Me
@@ -598,7 +598,7 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
                 <p className="text-xs text-stone-500 mt-1">Check database seeds configuration.</p>
               </div>
             ) : (
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8">
+              <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 lg:gap-8">
                 {projects.map((proj) => {
                   const images = typeof proj.image_urls === 'string'
                     ? JSON.parse(proj.image_urls)
@@ -613,7 +613,7 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
                     <motion.div
                       key={proj.id}
                       onClick={() => setSelectedProject(proj)}
-                      className="group cursor-none rounded-2xl overflow-hidden border border-stone-200/60 bg-white/45 backdrop-blur-sm hover:border-blue-500/30 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between p-3 md:p-4"
+                      className="group cursor-none rounded-2xl overflow-hidden border border-stone-200/60 bg-white/45 backdrop-blur-sm hover:border-blue-500/30 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between p-2 sm:p-3 md:p-4 min-w-0 w-full"
                       data-cursor="view"
                     >
                       {/* Image Thumbnail Container */}
@@ -698,7 +698,7 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
               </h3>
             </div>
 
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8">
+            <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8">
               {/* Card 1: Technical Skills */}
               <div className="p-3 sm:p-4 md:p-6 rounded-2xl border border-stone-200 bg-white/80 backdrop-blur-sm hover:border-blue-500/30 transition-all duration-300 shadow-xl flex flex-col justify-between">
                 <div>
