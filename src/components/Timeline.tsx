@@ -56,8 +56,8 @@ export default function Timeline() {
 
   return (
     <div ref={containerRef} className="relative w-full max-w-5xl mx-auto py-16 px-4 sm:px-6">
-      {/* Scroll-Linked Progress Line (Vertical Line on left for mobile/tablet) */}
-      <div className="absolute left-6 lg:left-1/2 top-4 bottom-4 w-[2px] bg-stone-200">
+      {/* Scroll-Linked Progress Line (Center line for all widths) */}
+      <div className="absolute left-1/2 top-4 bottom-4 w-[2px] bg-stone-200 -translate-x-1/2">
         {/* Filled scroll indicator */}
         <motion.div
           className="absolute top-0 left-0 bottom-0 w-full bg-blue-500 origin-top"
@@ -73,8 +73,8 @@ export default function Timeline() {
           return (
             <div
               key={item.id}
-              className={`relative flex flex-col items-start lg:flex-row lg:items-center ${
-                isEven ? 'lg:justify-start' : 'lg:justify-end'
+              className={`relative flex flex-row items-start ${
+                isEven ? 'justify-start' : 'justify-end'
               }`}
             >
               {/* Central Interactive Node */}
@@ -95,9 +95,9 @@ export default function Timeline() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-100px' }}
                 transition={{ duration: 0.6, type: 'spring', damping: 20 }}
-                className={`w-full lg:w-[48%] min-w-0 lg:min-w-[120px] max-w-full ml-10 lg:ml-0 ${
-                  !isEven ? 'lg:ml-auto' : ''
-                } p-4 lg:p-8 rounded-2xl border border-stone-200 bg-white/80 backdrop-blur-sm relative group hover:border-blue-500/30 transition-all duration-300 shadow-xl`}
+                className={`w-[38%] sm:w-[40%] md:w-[42%] max-w-[140px] sm:max-w-[160px] md:max-w-[190px] min-w-0 ml-0 ${
+                  !isEven ? 'ml-auto' : ''
+                } p-2.5 sm:p-3 md:p-4 lg:p-6 rounded-2xl border border-stone-200 bg-white/80 backdrop-blur-sm relative group hover:border-blue-500/30 transition-all duration-300 shadow-xl`}
               >
                 {/* Visual side highlights */}
                 <div className="absolute top-0 bottom-0 left-0 w-1 bg-gradient-to-b from-blue-500 to-purple-500 rounded-l-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

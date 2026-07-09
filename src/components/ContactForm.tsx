@@ -78,9 +78,9 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-6 max-w-5xl mx-auto items-start py-8">
+    <div className="grid grid-cols-12 gap-2 sm:gap-3 md:gap-4 lg:gap-6 max-w-5xl mx-auto items-start py-8">
       {/* Left side: Bold CTAs and Social Links */}
-      <div className="lg:col-span-5 min-w-0 space-y-5 sm:space-y-7">
+      <div className="col-span-5 min-w-0 space-y-5 sm:space-y-7">
         <div className="space-y-3 sm:space-y-4">
           <motion.h3
             initial={{ opacity: 0, y: 15 }}
@@ -101,7 +101,7 @@ export default function ContactForm() {
             Get in Touch
           </h4>
           
-          <div className="grid grid-cols-1 gap-3 lg:grid-cols-2 lg:gap-3">
+          <div className="grid grid-cols-2 gap-2 sm:gap-3">
             {/* Email link */}
             <a
               href="mailto:m82186445@gmail.com"
@@ -187,7 +187,7 @@ export default function ContactForm() {
       </div>
 
       {/* Right side: Interactive Contact Form */}
-      <div className="lg:col-span-7 min-w-0">
+      <div className="col-span-7 min-w-0">
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Floating Label Input: Name */}
           <div className="relative">

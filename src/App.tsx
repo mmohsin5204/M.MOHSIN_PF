@@ -478,10 +478,10 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
           id="about"
           className="relative pt-6 md:pt-10 lg:pt-16 pb-24 px-4 sm:px-6 md:px-12 w-full max-w-5xl mx-auto border-t border-stone-200/20 z-10"
         >
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-16 items-start">
+          <div className="grid grid-cols-12 gap-4 sm:gap-6 md:gap-10 lg:gap-16 items-start">
             
             {/* Split Left: 3D Tilting Image */}
-            <div className="col-span-1 lg:col-span-5 flex justify-center">
+            <div className="col-span-5 flex justify-center min-w-0">
               <motion.div
                 onMouseMove={handleMouseMoveTilt}
                 onMouseLeave={handleMouseLeaveTilt}
@@ -494,7 +494,7 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
                   rotateY: tilt.y
                 }}
                 transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-                className="relative w-full max-w-full lg:max-w-[280px] h-[200px] sm:h-[240px] md:h-[300px] lg:h-[360px] rounded-3xl overflow-hidden border border-stone-200/60 shadow-2xl group cursor-help"
+                className="relative w-full max-w-full sm:max-w-[220px] md:max-w-[240px] lg:max-w-[280px] h-[180px] sm:h-[220px] md:h-[260px] lg:h-[360px] rounded-3xl overflow-hidden border border-stone-200/60 shadow-2xl group cursor-help"
                 data-cursor="pointer"
               >
                 {/* Profile Placeholder Image with elegant canvas gradient overlay */}
@@ -522,7 +522,7 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
             </div>
 
             {/* Split Right: Text Reveal and Skills display */}
-            <div className="col-span-1 lg:col-span-7 space-y-5 sm:space-y-6 text-left">
+            <div className="col-span-7 space-y-5 sm:space-y-6 text-left min-w-0">
               <div className="space-y-4">
                 <h2 className="text-xs font-mono text-blue-500 uppercase tracking-widest font-bold">
                   About Me
@@ -541,7 +541,7 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
                   Core Skills
                 </h4>
                 
-                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-3">
+                <div className="grid grid-cols-2 gap-2 sm:gap-3">
                   {SKILLS.map((skill, index) => (
                     <div
                       key={index}
@@ -549,11 +549,11 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
                     >
                       <div className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                        <span className="text-[9px] sm:text-[10px] font-mono tracking-wide text-stone-700">
+                        <span className="text-[8px] sm:text-[9px] font-mono tracking-wide text-stone-700">
                           {skill.name}
                         </span>
                       </div>
-                      <span className={`text-[8px] sm:text-[9px] font-mono font-bold ${skill.color}`}>
+                      <span className={`text-[7px] sm:text-[8px] font-mono font-bold ${skill.color}`}>
                         {skill.level}
                       </span>
                     </div>
@@ -617,7 +617,7 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
                       data-cursor="view"
                     >
                       {/* Image Thumbnail Container */}
-                      <div className="relative h-[150px] sm:h-[180px] md:h-[220px] rounded-xl overflow-hidden mb-3 sm:mb-4 bg-stone-100 border border-stone-200/20">
+                      <div className="relative h-[140px] sm:h-[160px] md:h-[200px] rounded-xl overflow-hidden mb-3 sm:mb-4 bg-stone-100 border border-stone-200/20">
                         <img
                           src={thumb}
                           alt={proj.title}
@@ -698,11 +698,11 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
               </h3>
             </div>
 
-            <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8">
+            <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 lg:gap-8">
               {/* Card 1: Technical Skills */}
               <div className="p-3 sm:p-4 md:p-6 rounded-2xl border border-stone-200 bg-white/80 backdrop-blur-sm hover:border-blue-500/30 transition-all duration-300 shadow-xl flex flex-col justify-between">
                 <div>
-                  <h4 className="text-sm sm:text-base md:text-xl font-display font-bold text-stone-900 mb-3 sm:mb-4 border-b border-stone-100 pb-2">Technical Skills</h4>
+                  <h4 className="text-[11px] sm:text-sm md:text-xl font-display font-bold text-stone-900 mb-2 sm:mb-3 md:mb-4 border-b border-stone-100 pb-2">Technical Skills</h4>
                   <div className="flex flex-wrap gap-2">
                     {[
                       'HTML5',
