@@ -78,19 +78,19 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-5xl mx-auto items-start py-8">
+    <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)] lg:grid-cols-12 gap-3 sm:gap-5 max-w-5xl mx-auto items-start py-8">
       {/* Left side: Bold CTAs and Social Links */}
-      <div className="lg:col-span-5 space-y-8">
-        <div className="space-y-4">
+      <div className="col-span-1 lg:col-span-5 min-w-0 space-y-5 sm:space-y-7">
+        <div className="space-y-3 sm:space-y-4">
           <motion.h3
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-2xl md:text-3xl font-display font-bold tracking-tight text-stone-900"
+            className="text-lg sm:text-xl md:text-3xl font-display font-bold tracking-tight text-stone-900"
           >
             Let&apos;s engineer something memorable together.
           </motion.h3>
-          <p className="text-stone-500 font-sans text-sm font-light leading-relaxed">
+          <p className="text-stone-500 font-sans text-[12px] sm:text-sm font-light leading-relaxed">
             I am always open to consulting opportunities, selective freelance contracts, and collaborative web design. Feel free to reach out directly or use the contact form.
           </p>
         </div>
@@ -101,16 +101,16 @@ export default function ContactForm() {
             Get in Touch
           </h4>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-2 sm:gap-3">
             {/* Email link */}
             <a
               href="mailto:m82186445@gmail.com"
               onClick={handleEmailClick}
-              className="relative flex items-center gap-3 p-3.5 rounded-xl border border-stone-200/60 bg-stone-50/50 hover:border-blue-500/30 transition-all group"
+              className="relative flex items-center gap-2 sm:gap-3 p-3 rounded-xl border border-stone-200/60 bg-stone-50/50 hover:border-blue-500/30 transition-all group"
               data-cursor="pointer"
             >
-              <div className="w-9 h-9 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500 group-hover:rotate-12 transition-transform duration-300">
-                <Mail className="w-4 h-4" />
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500 group-hover:rotate-12 transition-transform duration-300">
+                <Mail className="w-3 h-3" />
               </div>
               <div className="min-w-0">
                 <p className="text-xs font-mono text-stone-400 uppercase tracking-wider">Email</p>
@@ -137,11 +137,11 @@ export default function ContactForm() {
               href="https://github.com/mmohsin5204"
               target="_blank"
               rel="noreferrer noopener"
-              className="flex items-center gap-3 p-3.5 rounded-xl border border-stone-200/60 bg-stone-50/50 hover:border-blue-500/30 transition-all group"
+              className="flex items-center gap-2 sm:gap-3 p-3 rounded-xl border border-stone-200/60 bg-stone-50/50 hover:border-blue-500/30 transition-all group"
               data-cursor="pointer"
             >
-              <div className="w-9 h-9 rounded-lg bg-stone-200 flex items-center justify-center text-stone-700 group-hover:rotate-12 transition-transform duration-300">
-                <Github className="w-4 h-4" />
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-stone-200 flex items-center justify-center text-stone-700 group-hover:rotate-12 transition-transform duration-300">
+                <Github className="w-3 h-3" />
               </div>
               <div className="min-w-0">
                 <p className="text-xs font-mono text-stone-400 uppercase tracking-wider">GitHub</p>
@@ -154,11 +154,11 @@ export default function ContactForm() {
               href="https://linkedin.com"
               target="_blank"
               rel="noreferrer noopener"
-              className="flex items-center gap-3 p-3.5 rounded-xl border border-stone-200/60 bg-stone-50/50 hover:border-blue-500/30 transition-all group"
+              className="flex items-center gap-2 sm:gap-3 p-3 rounded-xl border border-stone-200/60 bg-stone-50/50 hover:border-blue-500/30 transition-all group"
               data-cursor="pointer"
             >
-              <div className="w-9 h-9 rounded-lg bg-blue-600/10 flex items-center justify-center text-blue-600 group-hover:rotate-12 transition-transform duration-300">
-                <Linkedin className="w-4 h-4" />
+              <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-blue-600/10 flex items-center justify-center text-blue-600 group-hover:rotate-12 transition-transform duration-300">
+                <Linkedin className="w-3.5 h-3.5" />
               </div>
               <div className="min-w-0">
                 <p className="text-xs font-mono text-stone-400 uppercase tracking-wider">LinkedIn</p>
@@ -171,11 +171,11 @@ export default function ContactForm() {
               href="https://fiverr.com/mohsinwebdev_"
               target="_blank"
               rel="noreferrer noopener"
-              className="flex items-center gap-3 p-3.5 rounded-xl border border-stone-200/60 bg-stone-50/50 hover:border-blue-500/30 transition-all group"
+              className="flex items-center gap-2 sm:gap-3 p-3 rounded-xl border border-stone-200/60 bg-stone-50/50 hover:border-blue-500/30 transition-all group"
               data-cursor="pointer"
             >
-              <div className="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-500 group-hover:rotate-12 transition-transform duration-300">
-                <DollarSign className="w-4 h-4" />
+              <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-500 group-hover:rotate-12 transition-transform duration-300">
+                <DollarSign className="w-3.5 h-3.5" />
               </div>
               <div className="min-w-0">
                 <p className="text-xs font-mono text-stone-400 uppercase tracking-wider">Fiverr</p>
@@ -187,7 +187,7 @@ export default function ContactForm() {
       </div>
 
       {/* Right side: Interactive Contact Form */}
-      <div className="lg:col-span-7">
+      <div className="col-span-1 lg:col-span-7 min-w-0">
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Floating Label Input: Name */}
           <div className="relative">
@@ -199,7 +199,7 @@ export default function ContactForm() {
               onChange={handleChange}
               onFocus={() => handleFocus('name', true)}
               onBlur={() => handleFocus('name', false)}
-              className="peer w-full px-4 py-4 rounded-xl border border-stone-200 bg-transparent text-stone-900 placeholder-transparent focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all font-sans text-sm font-light"
+              className="peer w-full px-3 py-3 sm:px-4 sm:py-4 rounded-xl border border-stone-200 bg-transparent text-stone-900 placeholder-transparent focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all font-sans text-sm font-light"
               placeholder="Your Name"
               disabled={status === 'loading'}
             />
@@ -225,7 +225,7 @@ export default function ContactForm() {
               onChange={handleChange}
               onFocus={() => handleFocus('email', true)}
               onBlur={() => handleFocus('email', false)}
-              className="peer w-full px-4 py-4 rounded-xl border border-stone-200 bg-transparent text-stone-900 placeholder-transparent focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all font-sans text-sm font-light"
+              className="peer w-full px-3 py-3 sm:px-4 sm:py-4 rounded-xl border border-stone-200 bg-transparent text-stone-900 placeholder-transparent focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all font-sans text-sm font-light"
               placeholder="your@email.com"
               disabled={status === 'loading'}
             />
@@ -251,7 +251,7 @@ export default function ContactForm() {
               onChange={handleChange}
               onFocus={() => handleFocus('message', true)}
               onBlur={() => handleFocus('message', false)}
-              className="peer w-full px-4 py-4 rounded-xl border border-stone-200 bg-transparent text-stone-900 placeholder-transparent focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all font-sans text-sm font-light resize-none"
+              className="peer w-full px-3 py-3 sm:px-4 sm:py-4 rounded-xl border border-stone-200 bg-transparent text-stone-900 placeholder-transparent focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all font-sans text-sm font-light resize-none"
               placeholder="How can I help you?"
               disabled={status === 'loading'}
             />
@@ -280,7 +280,7 @@ export default function ContactForm() {
                 >
                   <MagneticButton
                     type="submit"
-                    className="w-full md:w-auto px-8 py-4 rounded-xl bg-blue-500 hover:bg-blue-600 text-white font-mono text-xs uppercase tracking-widest font-semibold flex items-center justify-center gap-2 shadow-lg hover:shadow-blue-500/20 transition-all duration-300"
+                    className="w-full md:w-auto px-6 py-3 sm:px-8 sm:py-4 rounded-xl bg-blue-500 hover:bg-blue-600 text-white font-mono text-xs uppercase tracking-widest font-semibold flex items-center justify-center gap-2 shadow-lg hover:shadow-blue-500/20 transition-all duration-300"
                   >
                     Send Message
                     <Send className="w-3.5 h-3.5" />

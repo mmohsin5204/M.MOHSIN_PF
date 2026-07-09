@@ -478,10 +478,10 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
           id="about"
           className="relative pt-6 md:pt-10 lg:pt-16 pb-24 px-6 md:px-12 w-full max-w-5xl mx-auto border-t border-stone-200/20 z-10"
         >
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-12 md:gap-16 items-start">
             
             {/* Split Left: 3D Tilting Image */}
-            <div className="md:col-span-5 flex justify-center">
+            <div className="col-span-1 md:col-span-5 flex justify-center">
               <motion.div
                 onMouseMove={handleMouseMoveTilt}
                 onMouseLeave={handleMouseLeaveTilt}
@@ -494,7 +494,7 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
                   rotateY: tilt.y
                 }}
                 transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-                className="relative w-full max-w-[280px] h-[360px] rounded-3xl overflow-hidden border border-stone-200/60 shadow-2xl group cursor-help"
+                className="relative w-full max-w-[180px] sm:max-w-[220px] h-[220px] sm:h-[260px] md:max-w-[280px] md:h-[360px] rounded-3xl overflow-hidden border border-stone-200/60 shadow-2xl group cursor-help"
                 data-cursor="pointer"
               >
                 {/* Profile Placeholder Image with elegant canvas gradient overlay */}
@@ -513,7 +513,7 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
 
                 <div
                   style={{ transform: 'translateZ(40px)' }}
-                  className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-stone-900/80 backdrop-blur-md border border-stone-800 text-left"
+                  className="absolute bottom-4 sm:bottom-5 md:bottom-6 left-4 sm:left-5 md:left-6 right-4 sm:right-5 md:right-6 p-3 sm:p-4 rounded-2xl bg-stone-900/80 backdrop-blur-md border border-stone-800 text-left"
                 >
                   <p className="text-[10px] font-mono text-blue-400 uppercase tracking-widest font-semibold font-bold">EST. 2019</p>
                   <h4 className="text-sm font-display font-bold text-white uppercase">CREATIVE CODING LABS</h4>
@@ -522,15 +522,15 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
             </div>
 
             {/* Split Right: Text Reveal and Skills display */}
-            <div className="md:col-span-7 space-y-8 text-left">
+            <div className="col-span-1 md:col-span-7 space-y-5 sm:space-y-6 text-left">
               <div className="space-y-4">
                 <h2 className="text-xs font-mono text-blue-500 uppercase tracking-widest font-bold">
                   About Me
                 </h2>
-                <h3 className="text-3xl md:text-4xl font-display font-bold text-stone-950 tracking-tight">
+                <h3 className="text-lg sm:text-xl md:text-4xl font-display font-bold text-stone-950 tracking-tight">
                   I engineer high-fidelity, scalable web applications with beautiful interfaces.
                 </h3>
-                <p className="text-stone-500 font-sans font-light leading-relaxed text-sm md:text-base">
+                <p className="text-stone-500 font-sans font-light leading-relaxed text-[11px] sm:text-[12px] md:text-base">
                   Hi, I&apos;m Mohsin, a Freelance Full-Stack Web Developer based in Karachi, Pakistan. I specialize in building complete digital products on Fiverr using React (Vite), Tailwind CSS, and Framer Motion on the frontend, backed by fast Node.js/Express APIs and secure relational database architectures.
                 </p>
               </div>
@@ -541,19 +541,19 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
                   Core Skills
                 </h4>
                 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 gap-2 sm:gap-3">
                   {SKILLS.map((skill, index) => (
                     <div
                       key={index}
-                      className="flex items-center justify-between p-3.5 rounded-xl bg-stone-50/50 border border-stone-200/50 hover:border-blue-500/30 hover:bg-stone-100/50 transition-all duration-300"
+                      className="flex items-center justify-between p-2.5 sm:p-3 rounded-xl bg-stone-50/50 border border-stone-200/50 hover:border-blue-500/30 hover:bg-stone-100/50 transition-all duration-300"
                     >
                       <div className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                        <span className="text-xs font-mono tracking-wide text-stone-700">
+                        <span className="text-[9px] sm:text-[10px] font-mono tracking-wide text-stone-700">
                           {skill.name}
                         </span>
                       </div>
-                      <span className={`text-[10px] font-mono font-bold ${skill.color}`}>
+                      <span className={`text-[8px] sm:text-[9px] font-mono font-bold ${skill.color}`}>
                         {skill.level}
                       </span>
                     </div>
@@ -698,11 +698,11 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
               </h3>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-2 md:gap-8">
               {/* Card 1: Technical Skills */}
-              <div className="p-6 md:p-8 rounded-2xl border border-stone-200 bg-white/80 backdrop-blur-sm hover:border-blue-500/30 transition-all duration-300 shadow-xl flex flex-col justify-between">
+              <div className="p-3 sm:p-4 md:p-6 rounded-2xl border border-stone-200 bg-white/80 backdrop-blur-sm hover:border-blue-500/30 transition-all duration-300 shadow-xl flex flex-col justify-between">
                 <div>
-                  <h4 className="text-xl font-display font-bold text-stone-900 mb-4 border-b border-stone-100 pb-2">Technical Skills</h4>
+                  <h4 className="text-sm sm:text-base md:text-xl font-display font-bold text-stone-900 mb-3 sm:mb-4 border-b border-stone-100 pb-2">Technical Skills</h4>
                   <div className="flex flex-wrap gap-2">
                     {[
                       'HTML5',
@@ -722,7 +722,7 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
                       'Dart (Basics)',
                       'Flutter (Basics)'
                     ].map((skill, i) => (
-                      <span key={i} className="px-2.5 py-1 text-[11px] font-mono tracking-wider rounded bg-stone-100 border border-stone-200 text-stone-700 uppercase">
+                      <span key={i} className="px-2 py-0.5 text-[8px] sm:text-[9px] font-mono tracking-wider rounded bg-stone-100 border border-stone-200 text-stone-700 uppercase">
                         {skill}
                       </span>
                     ))}
@@ -731,12 +731,12 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
               </div>
 
               {/* Card 2: Database */}
-              <div className="p-6 md:p-8 rounded-2xl border border-stone-200 bg-white/80 backdrop-blur-sm hover:border-blue-500/30 transition-all duration-300 shadow-xl flex flex-col justify-between">
+              <div className="p-3 sm:p-4 md:p-6 rounded-2xl border border-stone-200 bg-white/80 backdrop-blur-sm hover:border-blue-500/30 transition-all duration-300 shadow-xl flex flex-col justify-between">
                 <div>
-                  <h4 className="text-xl font-display font-bold text-stone-900 mb-4 border-b border-stone-100 pb-2">Database</h4>
+                  <h4 className="text-sm sm:text-base md:text-xl font-display font-bold text-stone-900 mb-3 sm:mb-4 border-b border-stone-100 pb-2">Database</h4>
                   <div className="flex flex-wrap gap-2">
                     {['MySQL', 'SQL Server', 'MongoDB (Basics)'].map((skill, i) => (
-                      <span key={i} className="px-2.5 py-1 text-[11px] font-mono tracking-wider rounded bg-stone-100 border border-stone-200 text-stone-700 uppercase">
+                      <span key={i} className="px-2 py-0.5 text-[8px] sm:text-[9px] font-mono tracking-wider rounded bg-stone-100 border border-stone-200 text-stone-700 uppercase">
                         {skill}
                       </span>
                     ))}
@@ -745,12 +745,12 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
               </div>
 
               {/* Card 3: Tools */}
-              <div className="p-6 md:p-8 rounded-2xl border border-stone-200 bg-white/80 backdrop-blur-sm hover:border-blue-500/30 transition-all duration-300 shadow-xl flex flex-col justify-between">
+              <div className="p-3 sm:p-4 md:p-6 rounded-2xl border border-stone-200 bg-white/80 backdrop-blur-sm hover:border-blue-500/30 transition-all duration-300 shadow-xl flex flex-col justify-between">
                 <div>
-                  <h4 className="text-xl font-display font-bold text-stone-900 mb-4 border-b border-stone-100 pb-2">Tools</h4>
+                  <h4 className="text-sm sm:text-base md:text-xl font-display font-bold text-stone-900 mb-3 sm:mb-4 border-b border-stone-100 pb-2">Tools</h4>
                   <div className="flex flex-wrap gap-2">
                     {['MS Office', 'MS Word', 'MS Excel', 'VS Code', 'Git', 'GitHub', 'Microsoft Azure (Basics)'].map((skill, i) => (
-                      <span key={i} className="px-2.5 py-1 text-[11px] font-mono tracking-wider rounded bg-stone-100 border border-stone-200 text-stone-700 uppercase">
+                      <span key={i} className="px-2 py-0.5 text-[8px] sm:text-[9px] font-mono tracking-wider rounded bg-stone-100 border border-stone-200 text-stone-700 uppercase">
                         {skill}
                       </span>
                     ))}
@@ -759,12 +759,12 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
               </div>
 
               {/* Card 4: Soft Skills */}
-              <div className="p-6 md:p-8 rounded-2xl border border-stone-200 bg-white/80 backdrop-blur-sm hover:border-blue-500/30 transition-all duration-300 shadow-xl flex flex-col justify-between">
+              <div className="p-3 sm:p-4 md:p-6 rounded-2xl border border-stone-200 bg-white/80 backdrop-blur-sm hover:border-blue-500/30 transition-all duration-300 shadow-xl flex flex-col justify-between">
                 <div>
-                  <h4 className="text-xl font-display font-bold text-stone-900 mb-4 border-b border-stone-100 pb-2">Soft Skills</h4>
+                  <h4 className="text-sm sm:text-base md:text-xl font-display font-bold text-stone-900 mb-3 sm:mb-4 border-b border-stone-100 pb-2">Soft Skills</h4>
                   <div className="flex flex-wrap gap-2">
                     {['Active', 'Punctual', 'Good Learner', 'Team Worker', 'Hard Working', 'Motivated', 'Eager to Learn'].map((skill, i) => (
-                      <span key={i} className="px-2.5 py-1 text-[11px] font-mono tracking-wider rounded bg-stone-100 border border-stone-200 text-stone-700 uppercase">
+                      <span key={i} className="px-2 py-0.5 text-[8px] sm:text-[9px] font-mono tracking-wider rounded bg-stone-100 border border-stone-200 text-stone-700 uppercase">
                         {skill}
                       </span>
                     ))}

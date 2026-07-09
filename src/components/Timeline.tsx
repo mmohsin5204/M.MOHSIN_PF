@@ -55,9 +55,9 @@ export default function Timeline() {
   });
 
   return (
-    <div ref={containerRef} className="relative w-full max-w-5xl mx-auto py-16 px-0 md:px-4">
+    <div ref={containerRef} className="relative w-full max-w-5xl mx-auto py-16 px-3 sm:px-4">
       {/* Scroll-Linked Progress Line (Vertical Line in the Center) */}
-      <div className="absolute left-6 md:left-1/2 top-4 bottom-4 w-[2px] bg-stone-200 -translate-x-1/2">
+      <div className="absolute left-1/2 top-4 bottom-4 w-[2px] bg-stone-200 -translate-x-1/2">
         {/* Filled scroll indicator */}
         <motion.div
           className="absolute top-0 bottom-0 left-0 right-0 bg-blue-500 origin-top"
@@ -73,8 +73,8 @@ export default function Timeline() {
           return (
             <div
               key={item.id}
-              className={`relative flex flex-col md:flex-row items-start md:items-center ${
-                isEven ? 'md:justify-start' : 'md:justify-end'
+              className={`relative flex flex-row items-start md:items-center ${
+                isEven ? 'justify-start' : 'justify-end'
               }`}
             >
               {/* Central Interactive Node */}
@@ -95,7 +95,7 @@ export default function Timeline() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-100px' }}
                 transition={{ duration: 0.6, type: 'spring', damping: 20 }}
-                className={`w-full md:w-[45%] ml-12 md:ml-0 p-4 sm:p-6 md:p-8 rounded-2xl border border-stone-200 bg-white/80 backdrop-blur-sm relative group hover:border-blue-500/30 transition-all duration-300 shadow-xl`}
+                className={`w-[48%] min-w-[120px] max-w-[180px] sm:max-w-[220px] md:w-[45%] md:max-w-none mx-2 md:mx-0 p-3 sm:p-5 md:p-8 rounded-2xl border border-stone-200 bg-white/80 backdrop-blur-sm relative group hover:border-blue-500/30 transition-all duration-300 shadow-xl`}
               >
                 {/* Visual side highlights */}
                 <div className="absolute top-0 bottom-0 left-0 w-1 bg-gradient-to-b from-blue-500 to-purple-500 rounded-l-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
