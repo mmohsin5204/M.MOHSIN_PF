@@ -10,11 +10,11 @@ export default function HeroMarquee({ items, speed = 25 }: HeroMarqueeProps) {
   const duplicatedItems = [...items, ...items, ...items, ...items];
 
   return (
-    <div className="relative w-full overflow-hidden py-6 border-y border-stone-200/10 dark:border-stone-800/60 bg-stone-50/50 dark:bg-stone-950/40 backdrop-blur-sm select-none">
+    <div className="relative w-full overflow-hidden py-3 border-y border-stone-200/10 dark:border-stone-800/60 bg-black select-none">
       <div className="flex w-max items-center">
         {/* Infinite Row Animation */}
         <motion.div
-          className="flex whitespace-nowrap gap-12 text-sm md:text-lg font-mono tracking-widest uppercase font-medium text-stone-500/80 dark:text-stone-400/80 items-center"
+          className="flex whitespace-nowrap gap-12 text-sm md:text-lg font-mono tracking-widest uppercase font-medium text-white items-center"
           animate={{ x: [0, -1000] }}
           transition={{
             ease: 'linear',

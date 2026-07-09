@@ -468,7 +468,7 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
           </div>
 
           {/* Infinitely scrolling ticker strip */}
-          <div className="w-full z-10 py-10">
+          <div className="w-full z-10 pt-6 md:pt-10 lg:pt-16 pb-0">
             <HeroMarquee items={roleTicker} />
           </div>
         </section>
@@ -476,7 +476,7 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
         {/* 7. ABOUT SECTION */}
         <section
           id="about"
-          className="relative pt-10 pb-24 px-6 md:px-12 w-full max-w-5xl mx-auto border-t border-stone-200/20 z-10"
+          className="relative pt-6 md:pt-10 lg:pt-16 pb-24 px-6 md:px-12 w-full max-w-5xl mx-auto border-t border-stone-200/20 z-10"
         >
           <div className="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
             
@@ -598,7 +598,7 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
                 <p className="text-xs text-stone-500 mt-1">Check database seeds configuration.</p>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-2 gap-4 md:gap-8">
                 {projects.map((proj) => {
                   const images = typeof proj.image_urls === 'string'
                     ? JSON.parse(proj.image_urls)
@@ -613,11 +613,11 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
                     <motion.div
                       key={proj.id}
                       onClick={() => setSelectedProject(proj)}
-                      className="group cursor-none rounded-2xl overflow-hidden border border-stone-200/60 bg-white/45 backdrop-blur-sm hover:border-blue-500/30 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between p-4"
+                      className="group cursor-none rounded-2xl overflow-hidden border border-stone-200/60 bg-white/45 backdrop-blur-sm hover:border-blue-500/30 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between p-3 md:p-4"
                       data-cursor="view"
                     >
                       {/* Image Thumbnail Container */}
-                      <div className="relative h-[220px] rounded-xl overflow-hidden mb-4 bg-stone-100 border border-stone-200/20">
+                      <div className="relative h-[150px] sm:h-[180px] md:h-[220px] rounded-xl overflow-hidden mb-3 sm:mb-4 bg-stone-100 border border-stone-200/20">
                         <img
                           src={thumb}
                           alt={proj.title}
@@ -627,11 +627,11 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
                         <div className="absolute inset-0 bg-gradient-to-t from-stone-950/40 via-transparent to-transparent opacity-60" />
                         
                         {/* Interactive floating badges */}
-                        <div className="absolute top-3 left-3 right-3 flex flex-wrap gap-1">
+                        <div className="absolute top-2 left-2 right-2 flex flex-wrap gap-1">
                           {tags?.slice(0, 3).map((tag: string, i: number) => (
                             <span
                               key={i}
-                              className="px-2 py-0.5 rounded bg-stone-900/80 backdrop-blur-sm border border-stone-800 text-stone-200 font-mono text-[9px] uppercase tracking-wider"
+                              className="px-2 py-0.5 rounded bg-stone-900/80 backdrop-blur-sm border border-stone-800 text-stone-200 font-mono text-[8px] sm:text-[9px] uppercase tracking-wider"
                             >
                               {tag}
                             </span>
@@ -640,18 +640,18 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
                       </div>
 
                       {/* Project info details */}
-                      <div className="space-y-2 text-left flex-1 flex flex-col justify-between">
+                      <div className="space-y-2 text-left flex-1 flex flex-col justify-between min-h-0">
                         <div className="space-y-1.5">
-                          <h4 className="text-lg font-display font-bold text-stone-900 group-hover:text-blue-500 transition-colors">
+                          <h4 className="text-sm sm:text-base md:text-lg font-display font-bold text-stone-900 group-hover:text-blue-500 transition-colors">
                             {proj.title}
                           </h4>
-                          <p className="text-xs text-stone-500 font-sans font-light leading-relaxed line-clamp-3">
+                          <p className="text-[10px] sm:text-xs text-stone-500 font-sans font-light leading-relaxed line-clamp-3">
                             {proj.short_description}
                           </p>
                         </div>
 
                         {/* Stagger link action */}
-                        <div className="flex items-center gap-1 text-blue-500 font-mono text-xs uppercase font-medium pt-4 group-hover:translate-x-1.5 transition-transform duration-300">
+                        <div className="flex items-center gap-1 text-blue-500 font-mono text-[9px] sm:text-xs uppercase font-medium pt-3 group-hover:translate-x-1.5 transition-transform duration-300">
                           View Project
                           <ChevronRight className="w-3.5 h-3.5" />
                         </div>

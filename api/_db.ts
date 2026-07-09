@@ -9,10 +9,14 @@ const poolConfig = {
   user: process.env.TIDB_USER || process.env.MYSQLUSER || process.env.DB_USER || 'root',
   password: process.env.TIDB_PASSWORD || process.env.MYSQLPASSWORD || process.env.DB_PASSWORD || '',
   database: process.env.TIDB_DATABASE || process.env.MYSQLDATABASE || process.env.DB_NAME || 'mohsin_portfolio',
-  ssl: {
-    minVersion: 'TLSv1.2',
-    ca: process.env.TIDB_CA_CERT,
-  },
+  ssl: process.env.TIDB_CA_CERT
+    ? {
+        minVersion: 'TLSv1.2',
+        ca: process.env.TIDB_CA_CERT,
+      }
+    : {
+        minVersion: 'TLSv1.2',
+      },
 };
 
 export const pool = mysql.createPool(poolConfig);
