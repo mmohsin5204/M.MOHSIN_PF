@@ -55,7 +55,7 @@ export default function Timeline() {
   });
 
   return (
-    <div ref={containerRef} className="relative w-full max-w-5xl mx-auto py-16 px-4 sm:px-6">
+    <div ref={containerRef} className="relative w-full max-w-5xl mx-auto py-16 px-3 sm:px-4 md:px-6">
       {/* Scroll-Linked Progress Line (Center line for all widths) */}
       <div className="absolute left-1/2 top-4 bottom-4 w-[2px] bg-stone-200 -translate-x-1/2">
         {/* Filled scroll indicator */}
@@ -66,7 +66,7 @@ export default function Timeline() {
       </div>
 
       {/* Timeline Milestones list */}
-      <div className="space-y-12">
+      <div className="space-y-10 sm:space-y-12 md:space-y-14 lg:space-y-16">
         {FREELANCE_TIMELINE.map((item, index) => {
           const isEven = index % 2 === 0;
 
@@ -103,7 +103,7 @@ export default function Timeline() {
                 <div className="absolute top-0 bottom-0 left-0 w-1 bg-gradient-to-b from-blue-500 to-purple-500 rounded-l-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                 <div className="flex items-center justify-between gap-4 mb-3">
-                  <span className="font-mono text-xs text-blue-500 font-semibold tracking-wide uppercase">
+                  <span className="font-mono text-[10px] sm:text-[11px] md:text-xs text-blue-500 font-semibold tracking-wide uppercase">
                     {item.duration}
                   </span>
                   
@@ -114,15 +114,15 @@ export default function Timeline() {
                   )}
                 </div>
 
-                <h3 className="text-xl font-display font-bold text-stone-900 group-hover:text-blue-500 transition-colors">
+                <h3 className="text-base sm:text-lg md:text-xl font-display font-bold text-stone-900 group-hover:text-blue-500 transition-colors">
                   {item.role}
                 </h3>
                 
-                <h4 className="text-sm font-sans text-stone-500 font-medium mb-4">
+                <h4 className="text-[11px] sm:text-sm font-sans text-stone-500 font-medium mb-4">
                   {item.company}
                 </h4>
 
-                <p className="text-sm text-stone-600 leading-relaxed font-light mb-6">
+                <p className="text-[12px] sm:text-sm text-stone-600 leading-relaxed font-light mb-6">
                   {item.description}
                 </p>
 
