@@ -78,7 +78,7 @@ export default function Timeline() {
               }`}
             >
               {/* Central Interactive Node */}
-              <div className="absolute left-6 lg:left-1/2 top-4 lg:top-auto w-6 h-6 rounded-full bg-stone-100 border-2 border-stone-300 flex items-center justify-center lg:-translate-x-1/2 z-10">
+              <div className="absolute left-1/2 top-4 w-6 h-6 rounded-full bg-stone-100 border-2 border-stone-300 flex items-center justify-center -translate-x-1/2 z-10">
                 {/* Active pulsating glowing core */}
                 <motion.div
                   initial={{ scale: 0.8 }}
@@ -95,9 +95,9 @@ export default function Timeline() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-100px' }}
                 transition={{ duration: 0.6, type: 'spring', damping: 20 }}
-                className={`w-[38%] sm:w-[40%] md:w-[42%] max-w-[140px] sm:max-w-[160px] md:max-w-[190px] min-w-0 ml-0 ${
+                className={`w-[45%] sm:w-[45%] md:w-[42%] lg:w-[38%] max-w-[260px] min-w-0 ml-0 ${
                   !isEven ? 'ml-auto' : ''
-                } p-2.5 sm:p-3 md:p-4 lg:p-6 rounded-2xl border border-stone-200 bg-white/80 backdrop-blur-sm relative group hover:border-blue-500/30 transition-all duration-300 shadow-xl`}
+                } p-4 sm:p-4 md:p-5 lg:p-6 rounded-2xl border border-stone-200 bg-white/80 backdrop-blur-sm relative group hover:border-blue-500/30 transition-all duration-300 shadow-xl`}
               >
                 {/* Visual side highlights */}
                 <div className="absolute top-0 bottom-0 left-0 w-1 bg-gradient-to-b from-blue-500 to-purple-500 rounded-l-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
