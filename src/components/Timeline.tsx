@@ -56,29 +56,29 @@ export default function Timeline() {
 
   return (
     <div ref={containerRef} className="relative w-full max-w-5xl mx-auto py-16 px-3 sm:px-4">
-      {/* Scroll-Linked Progress Line (Vertical Line in the Center) */}
-      <div className="absolute left-1/2 top-4 bottom-4 w-[2px] bg-stone-200 -translate-x-1/2">
+      {/* Scroll-Linked Progress Line (Vertical Line on left for mobile/tablet) */}
+      <div className="absolute left-6 lg:left-1/2 top-4 bottom-4 w-[2px] bg-stone-200">
         {/* Filled scroll indicator */}
         <motion.div
-          className="absolute top-0 bottom-0 left-0 right-0 bg-blue-500 origin-top"
+          className="absolute top-0 left-0 bottom-0 w-full bg-blue-500 origin-top"
           style={{ scaleY }}
         />
       </div>
 
       {/* Timeline Milestones list */}
-      <div className="space-y-16">
+      <div className="space-y-12">
         {FREELANCE_TIMELINE.map((item, index) => {
           const isEven = index % 2 === 0;
 
           return (
             <div
               key={item.id}
-              className={`relative flex flex-row items-start md:items-center ${
-                isEven ? 'justify-start' : 'justify-end'
+              className={`relative flex flex-col items-start lg:flex-row lg:items-center ${
+                isEven ? 'lg:justify-start' : 'lg:justify-end'
               }`}
             >
               {/* Central Interactive Node */}
-              <div className="absolute left-6 md:left-1/2 top-4 md:top-auto w-6 h-6 rounded-full bg-stone-100 border-2 border-stone-300 flex items-center justify-center -translate-x-1/2 z-10">
+              <div className="absolute left-6 lg:left-1/2 top-4 lg:top-auto w-6 h-6 rounded-full bg-stone-100 border-2 border-stone-300 flex items-center justify-center lg:-translate-x-1/2 z-10">
                 {/* Active pulsating glowing core */}
                 <motion.div
                   initial={{ scale: 0.8 }}
@@ -95,7 +95,9 @@ export default function Timeline() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-100px' }}
                 transition={{ duration: 0.6, type: 'spring', damping: 20 }}
-                className={`w-[48%] min-w-[120px] max-w-[180px] sm:max-w-[220px] md:w-[45%] md:max-w-none mx-2 md:mx-0 p-3 sm:p-5 md:p-8 rounded-2xl border border-stone-200 bg-white/80 backdrop-blur-sm relative group hover:border-blue-500/30 transition-all duration-300 shadow-xl`}
+                className={`w-full lg:w-[48%] min-w-0 lg:min-w-[120px] max-w-full ml-10 lg:ml-0 ${
+                  !isEven ? 'lg:ml-auto' : ''
+                } p-4 lg:p-8 rounded-2xl border border-stone-200 bg-white/80 backdrop-blur-sm relative group hover:border-blue-500/30 transition-all duration-300 shadow-xl`}
               >
                 {/* Visual side highlights */}
                 <div className="absolute top-0 bottom-0 left-0 w-1 bg-gradient-to-b from-blue-500 to-purple-500 rounded-l-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

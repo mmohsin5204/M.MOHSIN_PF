@@ -476,9 +476,9 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
         {/* 7. ABOUT SECTION */}
         <section
           id="about"
-          className="relative pt-6 md:pt-10 lg:pt-16 pb-24 px-6 md:px-12 w-full max-w-5xl mx-auto border-t border-stone-200/20 z-10"
+          className="relative pt-6 md:pt-10 lg:pt-16 pb-24 px-4 sm:px-6 md:px-12 w-full max-w-5xl mx-auto border-t border-stone-200/20 z-10"
         >
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-12 md:gap-16 items-start">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-12 md:gap-16 items-start">
             
             {/* Split Left: 3D Tilting Image */}
             <div className="col-span-1 md:col-span-5 flex justify-center">
@@ -494,7 +494,7 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
                   rotateY: tilt.y
                 }}
                 transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-                className="relative w-full max-w-[180px] sm:max-w-[220px] h-[220px] sm:h-[260px] md:max-w-[280px] md:h-[360px] rounded-3xl overflow-hidden border border-stone-200/60 shadow-2xl group cursor-help"
+                className="relative w-full max-w-[280px] sm:max-w-[320px] h-[220px] sm:h-[260px] md:max-w-none md:h-[360px] rounded-3xl overflow-hidden border border-stone-200/60 shadow-2xl group cursor-help"
                 data-cursor="pointer"
               >
                 {/* Profile Placeholder Image with elegant canvas gradient overlay */}
@@ -541,7 +541,7 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
                   Core Skills
                 </h4>
                 
-                <div className="grid grid-cols-2 gap-2 sm:gap-3">
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-3">
                   {SKILLS.map((skill, index) => (
                     <div
                       key={index}
@@ -568,7 +568,7 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
         {/* 8. PROJECTS SECTION */}
         <section
           id="projects"
-          className="relative py-24 px-6 md:px-12 w-full max-w-5xl mx-auto border-t border-stone-200/20 z-10"
+          className="relative py-24 px-4 sm:px-6 md:px-12 w-full max-w-5xl mx-auto border-t border-stone-200/20 z-10"
         >
           <div className="space-y-12">
             
@@ -598,7 +598,7 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
                 <p className="text-xs text-stone-500 mt-1">Check database seeds configuration.</p>
               </div>
             ) : (
-              <div className="grid grid-cols-2 gap-4 md:gap-8">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8">
                 {projects.map((proj) => {
                   const images = typeof proj.image_urls === 'string'
                     ? JSON.parse(proj.image_urls)
@@ -667,7 +667,7 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
         {/* 9. EXPERIENCE SECTION (TIMELINE) */}
         <section
           id="experience"
-          className="relative py-24 px-6 md:px-12 w-full max-w-5xl mx-auto border-t border-stone-200/20 z-10"
+          className="relative py-24 px-4 sm:px-6 md:px-12 w-full max-w-5xl mx-auto border-t border-stone-200/20 z-10"
         >
           <div className="space-y-12">
             <div className="text-center space-y-2">
@@ -686,7 +686,7 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
         {/* 10. SKILLS SECTION */}
         <section
           id="skills"
-          className="relative py-24 px-6 md:px-12 w-full max-w-5xl mx-auto border-t border-stone-200/20 z-10"
+          className="relative py-24 px-4 sm:px-6 md:px-12 w-full max-w-5xl mx-auto border-t border-stone-200/20 z-10"
         >
           <div className="space-y-12">
             <div className="text-center space-y-2">
@@ -698,7 +698,7 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
               </h3>
             </div>
 
-            <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-2 md:gap-8">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8">
               {/* Card 1: Technical Skills */}
               <div className="p-3 sm:p-4 md:p-6 rounded-2xl border border-stone-200 bg-white/80 backdrop-blur-sm hover:border-blue-500/30 transition-all duration-300 shadow-xl flex flex-col justify-between">
                 <div>
@@ -778,7 +778,7 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
         {/* 11. CONTACT SECTION */}
         <section
           id="contact"
-          className="relative py-24 px-6 md:px-12 w-full max-w-5xl mx-auto border-t border-stone-200/20 z-10"
+          className="relative py-24 px-4 sm:px-6 md:px-12 w-full max-w-5xl mx-auto border-t border-stone-200/20 z-10"
         >
           <div className="space-y-12">
             <div className="text-center space-y-2">
@@ -795,7 +795,7 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
         </section>
 
         {/* 12. IMMERSIVE COMPOSITE FOOTER */}
-        <footer className="w-full border-t border-stone-200/20 bg-stone-100/50 backdrop-blur-sm py-12 px-6 z-10 relative">
+        <footer className="w-full border-t border-stone-200/20 bg-stone-100/50 backdrop-blur-sm py-12 px-4 sm:px-6 z-10 relative">
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left space-y-2">
               <h3 className="font-display font-bold text-lg tracking-wider">M.Mohsin</h3>
