@@ -74,7 +74,7 @@ export default function Timeline() {
             <div
               key={item.id}
               className={`relative w-full flex items-start lg:items-center ${
-                isEven ? 'lg:justify-start justify-center' : 'lg:justify-end justify-center'
+                isEven ? 'justify-start lg:justify-start' : 'justify-end lg:justify-end'
               }`}
             >
               {/* Central Interactive Node */}
