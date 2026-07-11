@@ -73,8 +73,8 @@ export default function Timeline() {
           return (
             <div
               key={item.id}
-              className={`relative w-full flex items-start lg:items-center ${
-                isEven ? 'justify-start lg:justify-start' : 'justify-end lg:justify-end'
+              className={`relative w-full flex items-start ${
+                isEven ? 'justify-start' : 'justify-end'
               }`}
             >
               {/* Central Interactive Node */}
@@ -89,15 +89,22 @@ export default function Timeline() {
                 />
               </div>
 
-              {/* Box container */}
+              {/* Box container - responsive widths for mobile, tablet, desktop */}
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-100px' }}
                 transition={{ duration: 0.6, type: 'spring', damping: 20 }}
-                className={`w-full lg:w-[42%] xl:w-[44%] max-w-none lg:max-w-none min-w-0 ${
-                  isEven ? 'lg:ml-0 lg:mr-6 xl:mr-8' : 'lg:ml-6 xl:ml-8 lg:mr-0'
-                } p-4 sm:p-4 md:p-5 lg:px-7 lg:py-7 xl:px-8 xl:py-8 rounded-2xl border border-stone-200 bg-white/80 backdrop-blur-sm relative group hover:border-blue-500/30 transition-all duration-300 shadow-xl`}
+                className={`
+                  min-w-0 p-4 sm:p-5 md:p-6 lg:px-7 lg:py-8 xl:px-8 xl:py-8
+                  rounded-2xl border border-stone-200 bg-white/80 backdrop-blur-sm
+                  relative group hover:border-blue-500/30 transition-all duration-300 shadow-xl
+                  ${
+                    isEven 
+                      ? 'w-[85%] sm:w-[75%] md:w-[60%] lg:w-[45%] xl:w-[48%]'
+                      : 'w-[85%] sm:w-[75%] md:w-[60%] lg:w-[45%] xl:w-[48%]'
+                  }
+                `}
               >
                 {/* Visual side highlights */}
                 <div className="absolute top-0 bottom-0 left-0 w-1 bg-gradient-to-b from-blue-500 to-purple-500 rounded-l-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
