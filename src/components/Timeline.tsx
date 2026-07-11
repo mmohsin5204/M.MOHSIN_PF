@@ -55,18 +55,17 @@ export default function Timeline() {
   });
 
   return (
-    <div ref={containerRef} className="relative w-full max-w-5xl mx-auto py-16 px-3 sm:px-4 md:px-6">
-      {/* Scroll-Linked Progress Line (Center line for all widths) */}
+    <div ref={containerRef} className="relative w-full max-w-5xl mx-auto py-16 px-3 sm:px-4 md:px-6 lg:px-8">
+      {/* Center vertical line - visible on all screens */}
       <div className="absolute left-1/2 top-4 bottom-4 w-[1px] bg-stone-200 -translate-x-1/2 z-20">
-        {/* Filled scroll indicator */}
         <motion.div
-          className="absolute top-0 left-0 bottom-0 w-full bg-blue-500 origin-top z-20"
+          className="absolute top-0 bottom-0 left-0 right-0 bg-blue-500 origin-top"
           style={{ scaleY }}
         />
       </div>
 
       {/* Timeline Milestones list */}
-      <div className="space-y-10 sm:space-y-12 md:space-y-14 lg:space-y-16">
+      <div className="space-y-8 sm:space-y-10 md:space-y-12 lg:space-y-16">
         {FREELANCE_TIMELINE.map((item, index) => {
           const isEven = index % 2 === 0;
 
@@ -88,15 +87,15 @@ export default function Timeline() {
                 />
               </div>
 
-              {/* Box container */}
+              {/* Box container - responsive widths for mobile/tablet/desktop */}
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-100px' }}
                 transition={{ duration: 0.6, type: 'spring', damping: 20 }}
-                className={`w-[48%] sm:w-[48%] md:w-[48%] lg:w-[48%] xl:w-[50%] max-w-[260px] lg:max-w-none min-w-0 ml-0 ${
-                  isEven ? 'lg:ml-4 xl:ml-6' : 'lg:mr-4 xl:mr-6 lg:ml-0'
-                } p-4 sm:p-4 md:p-5 lg:px-7 lg:py-7 xl:px-8 xl:py-8 rounded-2xl border border-stone-200 bg-white/80 backdrop-blur-sm relative group hover:border-blue-500/30 transition-all duration-300 shadow-xl`}
+                className={`w-[45%] sm:w-[48%] md:w-[42%] lg:w-[45%] xl:w-[48%] p-4 sm:p-5 md:p-6 lg:p-7 lg:px-8 xl:p-8 rounded-2xl border border-stone-200 bg-white/80 backdrop-blur-sm relative group hover:border-blue-500/30 transition-all duration-300 shadow-xl flex-shrink-0 ${
+                  isEven ? 'lg:ml-4 xl:ml-6' : 'lg:mr-4 xl:mr-6'
+                }`}
               >
                 {/* Visual side highlights */}
                 <div className="absolute top-0 bottom-0 left-0 w-1 bg-gradient-to-b from-blue-500 to-purple-500 rounded-l-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
