@@ -57,7 +57,7 @@ export default function Timeline() {
   return (
     <div ref={containerRef} className="relative w-full max-w-5xl mx-auto py-16 px-3 sm:px-4 md:px-6 lg:px-8">
       {/* Center vertical line - visible on all screens */}
-      <div className="absolute left-1/2 top-4 bottom-4 w-[2px] md:w-[1.5px] lg:w-[1px] bg-stone-200 -translate-x-1/2 z-20">
+      <div className="absolute left-1/2 top-4 bottom-4 w-[3px] md:w-[2px] lg:w-[1px] bg-stone-200 -translate-x-1/2 z-20">
         <motion.div
           className="absolute top-0 bottom-0 left-0 right-0 bg-blue-500 origin-top"
           style={{ scaleY }}
