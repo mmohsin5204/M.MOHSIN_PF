@@ -57,10 +57,10 @@ export default function Timeline() {
   return (
     <div ref={containerRef} className="relative w-full max-w-5xl mx-auto py-16 px-3 sm:px-4 md:px-6">
       {/* Scroll-Linked Progress Line (Center line for all widths) */}
-      <div className="absolute left-1/2 top-4 bottom-4 w-[2px] bg-stone-200 -translate-x-1/2">
+      <div className="absolute left-1/2 top-4 bottom-4 w-[1px] bg-stone-200 -translate-x-1/2 z-20">
         {/* Filled scroll indicator */}
         <motion.div
-          className="absolute top-0 left-0 bottom-0 w-full bg-blue-500 origin-top"
+          className="absolute top-0 left-0 bottom-0 w-full bg-blue-500 origin-top z-20"
           style={{ scaleY }}
         />
       </div>
@@ -73,8 +73,8 @@ export default function Timeline() {
           return (
             <div
               key={item.id}
-              className={`relative flex flex-row items-start ${
-                isEven ? 'justify-start' : 'justify-end'
+              className={`relative w-full flex items-start lg:items-center ${
+                isEven ? 'lg:justify-start justify-center' : 'lg:justify-end justify-center'
               }`}
             >
               {/* Central Interactive Node */}
@@ -95,15 +95,15 @@ export default function Timeline() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-100px' }}
                 transition={{ duration: 0.6, type: 'spring', damping: 20 }}
-                className={`w-[45%] sm:w-[45%] md:w-[42%] lg:w-[38%] max-w-[260px] min-w-0 ml-0 ${
-                  !isEven ? 'ml-auto' : ''
-                } p-4 sm:p-4 md:p-5 lg:p-6 rounded-2xl border border-stone-200 bg-white/80 backdrop-blur-sm relative group hover:border-blue-500/30 transition-all duration-300 shadow-xl`}
+                className={`w-full lg:w-[42%] xl:w-[44%] max-w-none lg:max-w-none min-w-0 ${
+                  isEven ? 'lg:ml-0 lg:mr-6 xl:mr-8' : 'lg:ml-6 xl:ml-8 lg:mr-0'
+                } p-4 sm:p-4 md:p-5 lg:px-7 lg:py-7 xl:px-8 xl:py-8 rounded-2xl border border-stone-200 bg-white/80 backdrop-blur-sm relative group hover:border-blue-500/30 transition-all duration-300 shadow-xl`}
               >
                 {/* Visual side highlights */}
                 <div className="absolute top-0 bottom-0 left-0 w-1 bg-gradient-to-b from-blue-500 to-purple-500 rounded-l-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                 <div className="flex items-center justify-between gap-4 mb-3">
-                  <span className="font-mono text-[10px] sm:text-[11px] md:text-xs text-blue-500 font-semibold tracking-wide uppercase">
+                  <span className="font-mono text-[10px] sm:text-[11px] md:text-xs lg:text-sm xl:text-[13px] text-blue-500 font-semibold tracking-wide uppercase">
                     {item.duration}
                   </span>
                   
@@ -114,15 +114,15 @@ export default function Timeline() {
                   )}
                 </div>
 
-                <h3 className="text-base sm:text-lg md:text-xl font-display font-bold text-stone-900 group-hover:text-blue-500 transition-colors">
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[1.35rem] font-display font-bold text-stone-900 group-hover:text-blue-500 transition-colors">
                   {item.role}
                 </h3>
                 
-                <h4 className="text-[11px] sm:text-sm font-sans text-stone-500 font-medium mb-4">
+                <h4 className="text-[11px] sm:text-sm md:text-[13px] lg:text-[14px] xl:text-base font-sans text-stone-500 font-medium mb-4">
                   {item.company}
                 </h4>
 
-                <p className="text-[12px] sm:text-sm text-stone-600 leading-relaxed font-light mb-6">
+                <p className="text-[12px] sm:text-sm md:text-[13px] lg:text-[14px] xl:text-[15px] text-stone-600 leading-relaxed font-light mb-6">
                   {item.description}
                 </p>
 
@@ -131,7 +131,7 @@ export default function Timeline() {
                   {item.tags.map((tag, i) => (
                     <span
                       key={i}
-                      className="px-2.5 py-1 text-[10px] font-mono tracking-wider rounded bg-stone-100 border border-stone-200 text-stone-600 uppercase"
+                      className="px-2.5 py-1 text-[10px] lg:px-3 lg:py-1.5 lg:text-[11px] xl:text-[12px] font-mono tracking-wider rounded bg-stone-100 border border-stone-200 text-stone-600 uppercase"
                     >
                       {tag}
                     </span>
