@@ -513,10 +513,10 @@ function PortfolioMain({ projects, loadingProjects }: PortfolioMainProps) {
 
                 <div
                   style={{ transform: 'translateZ(40px)' }}
-                  className="absolute bottom-4 sm:bottom-5 md:bottom-6 left-4 sm:left-5 md:left-6 right-4 sm:right-5 md:right-6 p-3 sm:p-4 rounded-2xl bg-stone-900/80 backdrop-blur-md border border-stone-800 text-left"
+                  className="absolute bottom-4 sm:bottom-5 md:bottom-6 left-4 sm:left-5 md:left-6 right-4 sm:right-5 md:right-6 p-2.5 sm:p-3 lg:p-4 rounded-xl sm:rounded-2xl lg:rounded-2xl bg-stone-900/80 backdrop-blur-md border border-stone-800 text-left"
                 >
-                  <p className="text-[10px] font-mono text-blue-400 uppercase tracking-widest font-semibold font-bold">EST. 2019</p>
-                  <h4 className="text-sm font-display font-bold text-white uppercase">CREATIVE CODING LABS</h4>
+                  <p className="text-[7px] sm:text-[8px] lg:text-[10px] font-mono text-blue-400 uppercase tracking-widest font-semibold font-bold">EST. 2019</p>
+                  <h4 className="text-[10px] sm:text-[11px] lg:text-sm font-display font-bold text-white uppercase">CREATIVE CODING LABS</h4>
                 </div>
               </motion.div>
             </div>
