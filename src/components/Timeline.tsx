@@ -94,7 +94,7 @@ export default function Timeline() {
                 viewport={{ once: true, margin: '-100px' }}
                 transition={{ duration: 0.6, type: 'spring', damping: 20 }}
                 className={`w-[45%] sm:w-[48%] md:w-[42%] lg:w-[45%] xl:w-[48%] p-4 sm:p-5 md:p-6 lg:p-7 lg:px-8 xl:p-8 rounded-2xl border border-stone-200 bg-white/80 backdrop-blur-sm relative group hover:border-blue-500/30 transition-all duration-300 shadow-xl flex-shrink-0 ${
-                  isEven ? 'lg:ml-4 xl:ml-6' : 'lg:mr-4 xl:mr-6'
+                  isEven ? 'lg:ml-2 xl:ml-3' : 'lg:mr-2 xl:mr-3'
                 }`}
               >
                 {/* Visual side highlights */}
